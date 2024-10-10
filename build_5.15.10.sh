@@ -7,6 +7,9 @@ set -e
 
 version=5.15.10-lts-lgpl
 
+# add psql and mysql driver support etc qt dependencies
+apt update && apt install -y libpq-dev libmysqlclient-dev libnss3-dev libatspi2.0-dev libx11-dev libssl-dev libfreetype6-dev libx11-dev libx11-xcb-dev libatspi2.0-dev libatk-bridge2.0-dev
+
 git clone --verbose --depth 1 --branch v$version https://code.qt.io/qt/qt5.git
 cd qt5
 perl init-repository --module-subset=default,-qtwebengine
